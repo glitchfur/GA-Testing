@@ -1,4 +1,4 @@
-name: Get Git Commit
+name: "Get Git Commit"
 
 on:
   push:
