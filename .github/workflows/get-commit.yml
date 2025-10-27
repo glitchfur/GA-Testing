@@ -18,4 +18,4 @@ jobs:
 
       - name: Return latest commit information
         run: |
-          echo "The latest commit is $GIT_COMMIT_ID, made on $GIT_COMMIT_DATE."
+          echo "The latest commit is ${{ env.GIT_COMMIT_ID }}, made on ${{ env.GIT_COMMIT_DATE }}."
