@@ -11,8 +11,11 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Get latest commit hash
-        run: git log -1 --format=%h
+      - name: Get latest commit information
+        run: |
+          echo "GIT_COMMIT_ID=$(git log -1 --format=%h)" >> "$GITHUB_ENV"
+          echo "GIT_COMMIT_DATE=$(git log -1 --format=%cs)" >> "$GITHUB_ENV"
 
-      - name: Get latest commit date
-        run: git log -1 --format=%cs
+      - name: Return latest commit information
+        run: |
+          echo "The latest commit is $GIT_COMMIT_ID, made on $GIT_COMMIT_DATE."
