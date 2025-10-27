@@ -1,0 +1,18 @@
+name: Get Git Commit
+
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+  steps:
+    - uses: actions/checkout@v4
+
+    - name: Get latest commit hash
+      run: git log -1 --format=%h
+
+    - name: Get latest commit date
+      run: git log -1 --format=%cs
