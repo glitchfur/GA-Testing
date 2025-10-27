@@ -1,4 +1,4 @@
-name: "Get Git Commit"
+name: Get Git Commit
 
 on:
   push:
@@ -8,11 +8,11 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
-  steps:
-    - uses: actions/checkout@v4
+    steps:
+      - uses: actions/checkout@v4
 
-    - name: Get latest commit hash
-      run: git log -1 --format=%h
+      - name: Get latest commit hash
+        run: git log -1 --format=%h
 
-    - name: Get latest commit date
-      run: git log -1 --format=%cs
+      - name: Get latest commit date
+        run: git log -1 --format=%cs
